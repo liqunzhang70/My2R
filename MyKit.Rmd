@@ -1,0 +1,154 @@
+---
+title: "MyRFile"
+author: "Liqun"
+date: "8/22/2021"
+output: html_document
+---
+
+``` {r, echo=FALSE}
+#library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(stringr)
+```
+
+hello
+hello
+hello
+hello
+
+*What happens when you surround text with one-star pairs?*
+
+**What happens when you surround text with two-star pairs?**
+
+***What happens when you surround text with three-star pairs?***
+
+1.  Start typing this list. Note there are two spaces between the period 
+    and the word "Start".
+2.  Type the second line of the list
+1.  What happens if I type step 3 as another step 1?
+
+*   What does this star at the beginning do?
+*   Visually, it's similar to the numbered list.
+
+1.  What happens if we nest a list?
+    1.  Type four spaces, then type the number
+    2.  Did this do what you expected?
+2.  What if we contine the numbers this way?
+    *   What happens if we indent using stars?
+    *   Let's add another one for good measure.
+        *   Can we get another level of nesting?
+        
+[What does this do?](https://google.com)
+        
+| Column 1 | Column 2 | Column 3 | Column 4 |
+| --- | ---: | :---: | :--- |
+| Notice | what | the | colons |
+| are | doing? | | |
+
+Table: The table with poor spacing
+
+
+| Column 1 | Column 2 | Column 3 | Column 4 |
+| -------- | -------: | :------: | :------- |
+| Notice   | what     | the      | colons   |
+| are      | doing?   |          |          |
+
+Table: The table with good spacing
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+# Header 1
+## Hellow `r 2+2`
+
+``` {r, echo=FALSE}
+# Return the sum of two input variales
+f<-function(x,y) {
+z<-x+y
+return(z)
+ }
+ f(10,2)
+```
+``` {r, echo=TRUE}
+f<-function(x,y) {
+z<-x+y
+return(z)
+ }
+ f(2,2)
+```
+``` {r} 
+x=c(1,2,3)
+y=c(4,5,6)
+plot(x,y)
+```
+
+#My Table
+
+``` {r, echo=FALSE}
+diets <- data.frame ('diet'=1:4, 'protein'=c(0,0,1,1), 'vitamin'=c(0,1,0,1))
+print(diets)
+qplot(data=diets, x=diet, y=protein)
+qplot(data=diets, x=diet, y=protein, geom=c("point","line"),xlab="Diet", ylab="Protein", main="Diet vs. Protein")
+```
+
+```{r}
+qplot(x = displ, y = hwy, data = mpg)
+```
+
+
+```{r}
+print(mpg, eval=TRUE)
+```
+
+
+```{r}
+teams <- c("Fal1cons", "Cardinals", "Seah1awks", "Vikings", "Bro1nco", "Patrio1ts") 
+ 
+teams_clean <- gsub("1", "", teams)
+ 
+print(teams_clean)
+str_sub('Marya1984', start=1,end=5)
+
+dataset <- c(3, 5, -2, 49, 10)
+mean(dataset)
+var(dataset)
+```
+
+``` {r}
+ ggplot(data=mpg, aes(x=displ, y=hwy)) +
+       geom_point() + 
+       geom_smooth(color="darkred") +
+       labs(title="Monthly Rent Y", subtitle="Data)", x="Monthly Rent ($)", y="Apartment Size (sq ft.)")
+```
+
+
+$-b \pm \sqrt{b^2 - 4ac} \over 2a$
+
+$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}}$
+
+$\forall x \in X, \quad \exists y \leq \epsilon$
+
+
