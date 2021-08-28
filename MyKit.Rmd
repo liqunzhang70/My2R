@@ -12,10 +12,7 @@ library(dplyr)
 library(stringr)
 ```
 
-hello
-hello
-hello
-hello
+No hello
 
 *What happens when you surround text with one-star pairs?*
 
